@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Matériel Évènementiel - Eventia237 Déïdo</title>
+    <!-- Chargement du design moderne -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans pb-24">
+
+    <!-- NAV BAR (Identique à l'accueil pour la cohérence) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-amber-600">Eventia237 <span class="text-gray-600 text-sm font-normal">Déïdo</span></a>
+            <div class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-amber-600 transition">Accueil</a>
+                <a href="catalogue.html" class="text-amber-600 font-bold">Catalogue</a>
+                <a href="packs.html" class="hover:text-amber-600 transition">Packs</a>
+                <a href="comment-ca-marche.html" class="hover:text-amber-600 transition">Comment ça marche</a>
+            </div>
+            <a href="https://wa.me/237654497118?text=Bonjour%20Eventia237%2C%20je%20souhaite%20avoir%20des%20informations%20concernant%20une%20location%20de%20mat%C3%A9riel." target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-green-600 transition flex items-center gap-2 shrink-0">
+    <i class="fab fa-whatsapp text-lg"></i> Nous écrire
+</a>
+
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE DE PAGE -->
+    <header class="bg-gray-900 text-white py-8 px-4 text-center">
+        <h1 class="text-2xl md:text-4xl font-extrabold mb-2">Louez votre matériel pièce par pièce</h1>
+        <p class="text-gray-400 text-sm md:text-base">Composez vous-même votre événement. Simple, clair, sans surprise.</p>
+    </header>
+
+    <!-- FILTRES DE CATÉGORIES (En haut) -->
+    <section class="max-w-6xl mx-auto px-4 mt-6">
+        <div class="flex gap-2 overflow-x-auto pb-3 scrollbar-hide snap-x">
+            <button class="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap snap-center cursor-pointer">✨ Tout voir</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">✅ Sans Caution</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🔒 Avec Caution</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🪑 Chaises</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🪵 Tables</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🎪 Tentes</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🍽️ Art de la table</button>
+            <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap hover:border-amber-500 snap-center cursor-pointer">🍲 Marmites</button>
+        </div>
+    </section>
+
+    <!-- CALCULATEUR INTELLIGENT -->
+    <section class="max-w-4xl mx-auto px-4 my-6">
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 shadow-sm">
+            <h3 class="font-bold text-amber-900 flex items-center gap-2 mb-2">
+                <i class="fa-solid fa-calculator"></i> Besoin d'aide pour quantifier ?
+            </h3>
+            <p class="text-sm text-amber-800 mb-4">Entrez votre nombre d'invités, nous calculons le mobilier requis automatiquement.</p>
+            <div class="flex flex-col sm:flex-row gap-4 items-end">
+                <div class="w-full sm:w-1/2">
+                    <label class="block text-xs font-bold text-gray-600 mb-1 uppercase">Pour combien de personnes ?</label>
+                    <input id="inputInvites" type="number" min="0" placeholder="Ex: 80" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm">
+                </div>
+                <button onclick="calculerMobilier()" class="w-full sm:w-1/2 bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 rounded-xl text-sm transition cursor-pointer">
+                    Estimer mon besoin
+                </button>
+            </div>
+            <!-- Zone de résultat masquée par défaut -->
+            <div id="resultatCalcul" class="hidden mt-4 pt-4 border-t border-amber-200 text-sm text-amber-950 bg-white p-3 rounded-xl">
+                💡 Notre recommandation : Il vous faudra environ <span id="nbTables" class="font-bold text-amber-700">0</span> tables rectangulaires et <span id="nbChaises" class="font-bold text-amber-700">0</span> chaises.
+            </div>
+        </div>
+    </section>
+
+    <!-- GRILLE PRODUITS -->
+    <main class="max-w-6xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <!-- Produit 1 (Lien vers sa fiche produit dédiée) -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col justify-between">
+                <a href="fiche-produit.html" class="block group">
+                    <div class="bg-gray-200 aspect-video w-full flex items-center justify-center text-gray-400 relative">
+                        <i class="fa-regular fa-image text-3xl group-hover:scale-110 transition"></i>
+                        <span class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded">✅ SANS CAUTION</span>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition truncate">Chaise Blanche Sans Manche</h4>
+                        <p class="text-xs text-gray-500 mt-1">Gamme standard propre</p>
+                        <p class="text-amber-600 font-extrabold text-sm mt-2">Dès 500F <span class="text-[10px] font-normal text-gray-400">/jour</span></p>
+                    </div>
+                </a>
+                <div class="p-3 pt-0">
+                    <button onclick="ajouterAuPanier('Chaise Blanche', 500)" class="w-full bg-gray-900 text-white py-1.5 rounded-lg text-xs font-bold hover:bg-amber-600 transition cursor-pointer">Ajouter</button>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col justify-between">
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-200 aspect-video w-full flex items-center justify-center text-gray-400 relative">
+                        <i class="fa-regular fa-image text-3xl group-hover:scale-110 transition"></i>
+                        <span class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded">✅ SANS CAUTION</span>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition truncate">Table Rectangulaire 8 Pers</h4>
+                        <p class="text-xs text-gray-500 mt-1">Bois & métal solide</p>
+                        <p class="text-amber-600 font-extrabold text-sm mt-2">Dès 3 500F <span class="text-[10px] font-normal text-gray-400">/jour</span></p>
+                    </div>
+                </div>
+                <div class="p-3 pt-0">
+                    <button onclick="ajouterAuPanier('Table Rectangulaire', 3500)" class="w-full bg-gray-900 text-white py-1.5 rounded-lg text-xs font-bold hover:bg-amber-600 transition cursor-pointer">Ajouter</button>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col justify-between">
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-200 aspect-video w-full flex items-center justify-center text-gray-400 relative">
+                        <i class="fa-regular fa-image text-3xl group-hover:scale-110 transition"></i>
+                        <span class="absolute top-2 left-2 bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded">🔒 CAUTION : 50 000F</span>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition truncate">Chaise Capitonnée VIP</h4>
+                        <p class="text-xs text-gray-500 mt-1">Mariage & Prestige</p>
+                        <p class="text-amber-600 font-extrabold text-sm mt-2">Dès 1 500F <span class="text-[10px] font-normal text-gray-400">/jour</span></p>
+                    </div>
+                </div>
+                <div class="p-3 pt-0">
+                    <button onclick="ajouterAuPanier('Chaise Capitonnée VIP', 1500)" class="w-full bg-gray-900 text-white py-1.5 rounded-lg text-xs font-bold hover:bg-amber-600 transition cursor-pointer">Ajouter</button>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col justify-between">
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-200 aspect-video w-full flex items-center justify-center text-gray-400 relative">
+                        <i class="fa-regular fa-image text-3xl group-hover:scale-110 transition"></i>
+                        <span class="absolute top-2 left-2 bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded">✅ SANS CAUTION</span>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition truncate">Nappe Blanche Coton</h4>
+                        <p class="text-xs text-gray-500 mt-1">Repassée sous plastique</p>
+                        <p class="text-amber-600 font-extrabold text-sm mt-2">Dès 1 000F <span class="text-[10px] font-normal text-gray-400">/jour</span></p>
+                    </div>
+                </div>
+                <div class="p-3 pt-0">
+                    <button onclick="ajouterAuPanier('Nappe Blanche', 1000)" class="w-full bg-gray-900 text-white py-1.5 rounded-lg text-xs font-bold hover:bg-amber-600 transition cursor-pointer">Ajouter</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-gray-900 text-white py-6 px-4 text-center text-xs border-t border-gray-800">
+        <p class="text-gray-400">Besoin d'un pack complet ? <a href="packs.html" class="text-amber-400 underline font-bold">Découvrez nos Packs Évènements →</a></p>
+    </footer>
+
+    <!-- BOUTON PANIER FLOTTANT -->
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-full max-w-md px-4 z-50">
+        <a href="panier.html" class="bg-amber-600 text-white p-4 rounded-xl flex justify-between items-center shadow-2xl hover:bg-amber-700 transition font-bold text-sm">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-basket-shopping text-base"></i>
+                <span id="panierNbArticles">Ma loc : 0 article</span>
+            </span>
+            <span class="flex items-center gap-2">
+                <span id="panierTotal">0 FCFA</span>
+                <span class="bg-amber-800 text-[10px] uppercase font-bold px-2 py-0.5 rounded">Voir dates <i class="fa-solid fa-arrow-right ml-1"></i></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- SCRIPT LOGIQUE INTERACTIVE -->
+    <script>
+        // Logique du calculateur
+        function calculerMobilier() {
+            const invites = parseInt(document.getElementById('inputInvites').value);
+            if (invites > 0) {
+                const tables = Math.ceil(invites / 8); // 8 personnes par table
+                document.getElementById('nbTables').innerText = tables;
+                document.getElementById('nbChaises').innerText = invites;
+                document.getElementById('resultatCalcul').classList.remove('hidden');
+            } else {
+                alert("Veuillez entrer un nombre d'invités valide.");
+            }
+        }
+
+        // Logique très simple de panier simulé
+        let totalPanier = 0;
+        let articlesPanier = 0;
+
+        function ajouterAuPanier(nom, prix) {
+            articlesPanier++;
+            totalPanier += prix;
+            document.getElementById('panierNbArticles').innerText = `Ma loc : ${articlesPanier} article${articlesPanier > 1 ? 's' : ''}`;
+            document.getElementById('panierTotal').innerText = `${totalPanier.toLocaleString('fr-FR')} FCFA`;
+        }
+    </script>
+</body>
+</html>

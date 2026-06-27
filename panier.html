@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier & Réservation - EventLoc Logpom</title>
+    <!-- Chargement du design moderne -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans pb-12">
+
+    <!-- NAV BAR (Identique pour la continuité esthétique) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-amber-600">Eventia237 <span class="text-gray-600 text-sm font-normal">Déïdo</span></a>
+            <div class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-amber-600 transition">Accueil</a>
+                <a href="catalogue.html" class="hover:text-amber-600 transition">Catalogue</a>
+                <a href="packs.html" class="hover:text-amber-600 transition">Packs</a>
+                <a href="comment-ca-marche.html" class="hover:text-amber-600 transition">Comment ça marche</a>
+            </div>
+            <a href="https://wa.me/237654497118?text=Bonjour%20Eventia237%2C%20je%20souhaite%20avoir%20des%20informations%20concernant%20une%20location%20de%20mat%C3%A9riel." target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-green-600 transition flex items-center gap-2 shrink-0">
+    <i class="fab fa-whatsapp text-lg"></i> Nous écrire
+</a>
+
+        </div>
+    </nav>
+
+    <!-- ZONE DE ETAPES -->
+    <div class="max-w-6xl mx-auto px-4 mt-6">
+        <div class="flex justify-center items-center gap-4 text-xs font-bold uppercase tracking-wider text-gray-400">
+            <span class="text-gray-500">1. Choix Matos</span>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span class="text-amber-600 border-b-2 border-amber-600 pb-1">2. Panier & Options</span>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span>3. Blocage</span>
+        </div>
+    </div>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- COLONNE GAUCHE & CENTRE : RÉCAPITULATIF & OPTIONS -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Récapitulatif matériel -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-amber-600"></i> Votre Sélection Matériel
+                </h2>
+                
+                <!-- Produit/Pack simulé dans le panier -->
+                <div class="flex items-center justify-between border-b border-gray-100 pb-4 mb-4">
+                    <div>
+                        <h3 id="nomArticlePanier" class="font-bold text-sm md:text-base text-gray-900">Pack Réunion 100 personnes</h3>
+                        <p class="text-xs text-green-600 font-semibold mt-0.5">✅ Gamme Sans Caution incluse</p>
+                        <p class="text-xs text-gray-400 mt-1"><i class="fa-regular fa-calendar-days"></i> Dates : Ce week-end (Du Samedi 7h au Lundi 8h)</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="font-black text-gray-950 block text-sm md:text-base">85 000 FCFA</span>
+                        <a href="catalogue.html" class="text-xs text-red-500 hover:underline mt-1 block">Modifier</a>
+                    </div>
+                </div>
+
+                <!-- SOUS-TOTAL INITIAL -->
+                <div class="flex justify-between text-sm text-gray-600 font-medium">
+                    <span>Sous-total matériel :</span>
+                    <span id="sousTotalMatos" class="font-bold text-gray-900">85 000 FCFA</span>
+                </div>
+            </div>
+
+            <!-- OPTIONS COMPLÉMENTAIRES -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h2 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-truck-ramp-box text-amber-600"></i> Options de Confort
+                </h2>
+                
+                <div class="space-y-3">
+                    <!-- Option 1 -->
+                    <label class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-200 cursor-pointer hover:border-amber-400 transition">
+                        <input id="optLivraison" type="checkbox" value="20000" class="mt-1 accent-amber-600" onchange="calculerTotalPanier()">
+                        <div>
+                            <span class="font-bold text-sm block text-gray-900">Livraison Douala (+20 000 FCFA)</span>
+                            <span class="text-xs text-gray-500 block">Transport sécurisé aller-retour. (Laissez décoché pour un retrait gratuit au dépôt Déïdo)</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 2 -->
+                    <label class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-200 cursor-pointer hover:border-amber-400 transition">
+                        <input id="optMontage" type="checkbox" value="15000" class="mt-1 accent-amber-600" onchange="calculerTotalPanier()">
+                        <div>
+                            <span class="font-bold text-sm block text-gray-900">Montage & Installation tente/matos (+15 000 FCFA)</span>
+                            <span class="text-xs text-gray-500 block">Notre équipe installe tout parfaitement selon votre plan avant l'événement.</span>
+                        </div>
+                    </label>
+
+                    <!-- Option 3 -->
+                    <label class="flex items-start gap-3 bg-gray-50 p-3 rounded-xl border border-gray-200 cursor-pointer hover:border-amber-400 transition">
+                        <input id="optNettoyage" type="checkbox" value="5000" class="mt-1 accent-amber-600" onchange="calculerTotalPanier()">
+                        <div>
+                            <span class="font-bold text-sm block text-gray-900">Forfait nettoyage simplifié (+5 000 FCFA)</span>
+                            <span class="text-xs text-gray-500 block">Rendez les nappes/chaises sales, nous gérons le lavage professionnel à la machine.</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- SÉCURISATION : CAUTION VS ASSURANCE CASSE -->
+            <div class="bg-gradient-to-br from-amber-900 to-amber-950 text-white rounded-2xl p-6 shadow-md">
+                <h2 class="text-base md:text-lg font-bold mb-2 flex items-center gap-2 text-amber-300">
+                    <i class="fa-solid fa-shield-halved"></i> Gestion des risques : Choisissez votre formule
+                </h2>
+                <p class="text-xs text-amber-100 mb-4">Pour protéger le matériel, cochez obligatoirement l'une des deux options ci-dessous :</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Formule Caution -->
+                    <label class="bg-white/10 border-2 border-transparent rounded-xl p-4 cursor-pointer block relative transition hover:bg-white/15" id="labelCaution">
+                        <input type="radio" name="formuleRisque" id="choixCaution" value="0" class="absolute top-4 right-4 accent-amber-400" checked onchange="basculerRisque('caution')">
+                        <span class="font-bold text-sm block text-amber-200 uppercase tracking-wider">🔒 Caution Classique</span>
+                        <span class="text-xl font-black block mt-1">150 000 FCFA</span>
+                        <span class="text-[11px] text-gray-300 block mt-2 leading-relaxed">Déposée au retrait, **entièrement restituée sous 48h** si aucun matériel n'est détruit.</span>
+                    </label>
+
+                    <!-- Formule Assurance Casse -->
+                    <label class="bg-white/10 border-2 border-transparent rounded-xl p-4 cursor-pointer block relative transition hover:bg-white/15" id="labelAssurance">
+                        <input type="radio" name="formuleRisque" id="choixAssurance" value="15000" class="absolute top-4 right-4 accent-amber-400" onchange="basculerRisque('assurance')">
+                        <span class="font-bold text-sm block text-green-300 uppercase tracking-wider">✨ Assurance Casse</span>
+                        <span class="text-xl font-black block mt-1">15 000 FCFA</span>
+                        <span class="text-[11px] text-gray-300 block mt-2 leading-relaxed">Frais fixes **non remboursables**. Vous êtes couvert en cas d'accident involontaire sur le mobilier.</span>
+                    </label>
+                </div>
+                <p class="text-[10px] text-amber-200 mt-3 text-center italic">Besoin d'explications détaillées ? <a href="contrat.html" target="_blank" class="underline hover:text-white">Consultez notre comparatif complet ici.</a></p>
+            </div>
+        </div>
+
+        <!-- COLONNE DROITE : LE TOTAL + FORMULAIRE CLIENT DE COMMANDE -->
+        <div class="space-y-6">
+            
+            <!-- BLOC CAISSE DU TOTAL & ACOMPTE -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-500 sticky top-24">
+                <h2 class="text-base font-bold text-gray-900 uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Résumé Financier</h2>
+                
+                <div class="space-y-2 text-sm text-gray-600">
+                    <div class="flex justify-between">
+                        <span>Prix matériel :</span>
+                        <span>85 000 F</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Options sélectionnées :</span>
+                        <span id="txtMontantOptions">0 F</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Frais d'assurance :</span>
+                        <span id="txtMontantAssurance">0 F</span>
+                    </div>
+                    <div id="ligneCautionVirtuelle" class="flex justify-between text-amber-700 bg-amber-50 p-1.5 rounded text-xs font-semibold">
+                        <span>⚠️ Caution à préparer au dépôt :</span>
+                        <span>150 000 F</span>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-gray-100 space-y-2">
+                    <div class="flex justify-between items-baseline">
+                        <span class="text-sm font-bold text-gray-900">Total global :</span>
+                        <span id="totalGlobalCommande" class="text-xl font-black text-gray-900">85 000 FCFA</span>
+                    </div>
+                    <div class="bg-green-50 text-green-900 p-3 rounded-xl border border-green-200 mt-2 text-center">
+                        <p class="text-xs font-bold uppercase tracking-wider text-green-700">Acompte 30% requis en ligne</p>
+                        <p id="totalAcompteRequis" class="text-2xl font-black mt-0.5 text-green-600">25 500 FCFA</p>
+                        <p class="text-[10px] text-green-800 mt-1">Pour bloquer fermement votre matériel dans le planning.</p>
+                    </div>
+                </div>
+
+                <!-- FORMULAIRE CLIENT -->
+                <div class="mt-6 space-y-3">
+                    <h3 class="text-xs font-bold text-gray-500 uppercase">Vos Coordonnées</h3>
+                    <input type="text" placeholder="Nom complet complet" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-amber-500" required>
+                    <input type="tel" placeholder="N° Téléphone WhatsApp (Ex: 699054186)" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-amber-500" required>
+                    <input type="text" placeholder="Adresse exacte de l'évènement" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-amber-500" required>
+                    <input type="text" placeholder="N° de Carte Nationale d'Identité (CNI)" class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-amber-500" required>
+                </div>
+
+                <!-- MODES DE PAIEMENT -->
+                <div class="mt-6 space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase block">Mode de règlement de l'acompte</label>
+                    <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold">
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white p-2.5 rounded-lg transition cursor-pointer flex items-center justify-center gap-1">
+                            📱 MTN MoMo
+                        </button>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white p-2.5 rounded-lg transition cursor-pointer flex items-center justify-center gap-1">
+                            🍊 Orange Money
+                        </button>
+                    </div>
+                    <button onclick="payerAuDepot()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold p-2 rounded-lg text-xs transition border border-gray-300 cursor-pointer">
+                        🏪 Je paierai directement au dépôt Déïdo
+                    </button>
+                </div>
+
+                <!-- CONTRAT ET VALIDATION -->
+                <div class="mt-4">
+                    <label class="flex items-start gap-2 text-[11px] text-gray-600 cursor-pointer">
+                        <input id="checkContrat" type="checkbox" class="mt-0.5 accent-amber-600">
+                        <span>J'ai lu et j'accepte le <a href="contrat.html" target="_blank" class="text-amber-600 underline font-semibold">contrat officiel de location (PDF)</a>.</span>
+                    </label>
+                </div>
+
+                <button onclick="finaliserLaCommande()" class="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition shadow-md shadow-green-500/20 text-center text-sm cursor-pointer">
+                    🚀 Confirmer et bloquer ma date
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6 px-4 text-center text-xs mt-12 border-t border-gray-800">
+        <p class="text-gray-400">Besoin d'aide ? Contactez notre support d'urgence au <strong>699054186</strong></p>
+    </footer>
+
+    <!-- SCRIPT DE LOGIQUE ET CALCUL DYNAMIQUE -->
+    <script>
+        const PRIX_MATERIEL_INITIAL = 85000;
+        const PRIX_CAUTION_FIXE = 150000;
+
+        function basculerRisque(type) {
+            const labelCaution = document.getElementById('labelCaution');
+            const labelAssurance = document.getElementById('labelAssurance');
+            const ligneCaution = document.getElementById('ligneCautionVirtuelle');
+
+            if (type === 'caution') {
+                labelCaution.style.borderColor = "#d97706"; // Amber-600
+                labelAssurance.style.borderColor = "transparent";
+                ligneCaution.classList.remove('hidden');
+            } else {
+                labelAssurance.style.borderColor = "#22c55e"; // Green-500
+                labelCaution.style.borderColor = "transparent";
+                ligneCaution.classList.add('hidden');
+            }
+            calculerTotalPanier();
+        }
+
+        function calculerTotalPanier() {
+            let totalOptions = 0;
+            let totalAssuranceCasse = 0;
+
+            // Récupération des options cochées
+            if (document.getElementById('optLivraison').checked) totalOptions += parseInt(document.getElementById('optLivraison').value);
+            if (document.getElementById('optMontage').checked) totalOptions += parseInt(document.getElementById('optMontage').value);
+            if (document.getElementById('optNettoyage').checked) totalOptions += parseInt(document.getElementById('optNettoyage').value);
+
+            // Récupération du choix d'assurance
+            if (document.getElementById('choixAssurance').checked) {
+                totalAssuranceCasse = parseInt(document.getElementById('choixAssurance').value);
+            }
+
+            // Calculs globaux
+            const totalGlobal = PRIX_MATERIEL_INITIAL + totalOptions + totalAssuranceCasse;
+            const acompteRequis = Math.round(totalGlobal * 0.30);
+
+            // Mise à jour de l'affichage HTML
+            document.getElementById('txtMontantOptions').innerText = totalOptions.toLocaleString('fr-FR') + " F";
+            document.getElementById('txtMontantAssurance').innerText = totalAssuranceCasse.toLocaleString('fr-FR') + " F";
+            document.getElementById('totalGlobalCommande').innerText = totalGlobal.toLocaleString('fr-FR') + " FCFA";
+            document.getElementById('totalAcompteRequis').innerText = acompteRequis.toLocaleString('fr-FR') + " FCFA";
+        }
+
+        function payerAuDepot() {
+            alert("Option enregistrée. Veuillez noter que sans paiement de l'acompte de 30%, le matériel reste disponible pour d'autres clients. Nous vous conseillons de passer au dépôt sous 24h.");
+        }
+
+        function finaliserLaCommande() {
+            if (!document.getElementById('checkContrat').checked) {
+                alert("Veuillez accepter les termes du contrat de location pour continuer.");
+                return;
+            }
+            alert("Félicitations ! Votre demande a été interceptée. Vous allez être redirigé vers l'API de paiement ou vers un conseiller WhatsApp pour finaliser le transfert de l'acompte.");
+        }
+
+        // Initialisation visuelle au chargement
+        window.onload = function() {
+            basculerRisque('caution');
+        };
+    </script>
+</body>
+</html>
