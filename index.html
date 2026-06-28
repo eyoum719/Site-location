@@ -2,143 +2,145 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Location Matériel Évènementiel Douala | Packs Sans Caution</title>
     <!-- Chargement du design moderne -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    
+    <!-- NAV BAR : TOTALEMENT OPTIMISÉE POUR ANDROID & IPHONE -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <!-- Ligne supérieure : Logo + Bouton WhatsApp -->
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center border-b border-gray-100">
+            <a href="index.html" class="text-xl font-bold text-amber-600">Eventia237 <span class="text-gray-600 text-xs font-normal">Déïdo</span></a>
+            
+            <a href="https://wa.me/237654497118?text=Bonjour%20Eventia237%2C%20je%20souhaite%20avoir%20des%20informations%20concernant%20une%20location%20de%20mat%C3%A9riel." target="_blank" class="bg-green-500 text-white px-3 py-1.5 rounded-full font-bold text-xs hover:bg-green-600 transition flex items-center gap-1.5 shrink-0 shadow-sm">
+                <i class="fab fa-whatsapp text-sm"></i> Écrire
+            </a>
+        </div>
 
-    <!-- HERO SECTION -->
-    <header class="bg-gradient-to-r from-gray-900 to-amber-950 text-white py-16 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-amber-600 text-xs uppercase font-bold px-3 py-1 rounded-full text-white">Nouveau à Douala</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">
-                Location matériel évènement à Douala.<br><span class="text-amber-400">Packs Sans Caution</span> dès 45 000 FCFA
-            </h1>
-    
-        </div><!-- NAV BAR (Identique pour la cohérence globale) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-amber-600">Eventia237 <span class="text-gray-600 text-sm font-normal">Déïdo</span></a>
-             <!-- Les 8 onglets de navigation indispensables (Visibles sur ordinateur) -->
-            <div class="hidden lg:flex gap-3 text-[11px] font-bold uppercase tracking-wider">
-                <a href="index.html" class="text-amber-600 hover:text-amber-700 transition">Accueil</a>
-                <a href="catalogue.html" class="text-gray-600 hover:text-amber-600 transition">Catalogue</a>
-                <a href="packs.html" class="text-gray-600 hover:text-amber-600 transition">Packs</a>
-                <a href="fiche-produit.html" class="text-gray-600 hover:text-amber-600 transition">Détails Matos</a>
-                <a href="panier.html" class="text-gray-600 hover:text-amber-600 transition">Mon Panier</a>
-                <a href="comment-ca-marche.html" class="text-gray-600 hover:text-amber-600 transition">Aide</a>
-                <a href="contrat.html" class="text-gray-600 hover:text-amber-600 transition">Contrat & Tarifs</a>
-                <a href="realisations.html" class="text-gray-600 hover:text-amber-600 transition">Réalisations</a>
-                <a href="contact.html" class="text-gray-600 hover:text-amber-600 transition">Contact</a>
+        <!-- ZONE DE NAVIGATION VISIBLE PAR DÉFAUT (Défilante horizontalement sur Mobile/Android/iPhone) -->
+        <div class="bg-gray-50 lg:bg-white border-b border-gray-200 lg:border-b-0">
+            <div class="max-w-6xl mx-auto px-2 lg:px-4 flex items-center gap-1 overflow-x-auto whitespace-nowrap scrollbar-none py-2.5 lg:py-2 lg:justify-center">
+                <a href="index.html" class="inline-block bg-amber-600 text-white lg:bg-transparent lg:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition">Accueil</a>
+                <a href="catalogue.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Catalogue</a>
+                <a href="packs.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Packs</a>
+                <a href="fiche-produit.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Matos</a>
+                <a href="panier.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Mon Panier</a>
+                <a href="comment-ca-marche.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Aide</a>
+                <a href="contrat.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Tarifs</a>
+                <a href="realisations.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Photos</a>
+                <a href="contact.html" class="inline-block bg-white text-gray-700 lg:bg-transparent lg:text-gray-600 hover:text-amber-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-gray-200 lg:border-0 transition">Contact</a>
             </div>
-
-            <a href="https://wa.me/237654497118?text=Bonjour%20Eventia237%2C%20je%20souhaite%20avoir%20des%20informations%20concernant%20une%20location%20de%20mat%C3%A9riel." target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-green-600 transition flex items-center gap-2 shrink-0">
-    <i class="fab fa-whatsapp text-lg"></i> Nous écrire
-</a>
-
         </div>
     </nav>
-    </nav>  <p class="text-gray-300 mb-8 max-w-xl mx-auto text-sm md:text-base">Trouvez, réservez et bloquez votre matériel en 3 clics. Zéro stress, zéro mauvaise surprise.</p>
+
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-gray-900 to-amber-950 text-white py-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-amber-600 text-[10px] uppercase font-bold px-2.5 py-1 rounded-full text-white">Nouveau à Douala</span>
+            <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold mt-3 mb-4 leading-tight">
+                Location matériel évènement à Douala.<br><span class="text-amber-400">Packs Sans Caution</span> dès 45 000 FCFA
+            </h1>
+            <p class="text-gray-300 mb-6 max-w-xl mx-auto text-xs md:text-base">Trouvez, réservez et bloquez votre matériel en 3 clics. Zéro stress, zéro mauvaise surprise.</p>
             
-            <!-- 3 Boutons Géants -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 p-4 rounded-xl font-bold shadow-lg hover:scale-105 transition border-2 border-amber-400 cursor-pointer">
+            <!-- 3 Boutons Gélules (Adaptés au tactile sur Android/iPhone) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl mx-auto">
+                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 py-3 px-4 rounded-xl font-bold shadow-md hover:bg-gray-100 transition border border-amber-400 cursor-pointer text-xs sm:text-sm">
                     🎉 Louer pour 50 pers
                 </button>
-                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 p-4 rounded-xl font-bold shadow-lg hover:scale-105 transition border-2 border-amber-400 cursor-pointer">
+                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 py-3 px-4 rounded-xl font-bold shadow-md hover:bg-gray-100 transition border border-amber-400 cursor-pointer text-xs sm:text-sm">
                     🎪 Louer pour 100 pers
                 </button>
-                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 p-4 rounded-xl font-bold shadow-lg hover:scale-105 transition border-2 border-amber-400 cursor-pointer">
+                <button onclick="scrollToSection('packs')" class="bg-white text-gray-900 py-3 px-4 rounded-xl font-bold shadow-md hover:bg-gray-100 transition border border-amber-400 cursor-pointer text-xs sm:text-sm">
                     👑 Louer pour 200 pers+
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- POURQUOI NOUS -->
-    <section class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <div class="text-green-500 text-2xl mb-2">✅</div>
-                <h3 class="font-bold text-sm md:text-base">Matos propre contrôlé</h3>
+    <!-- POURQUOI NOUS (2 colonnes propres sur mobile, pas de débordement) -->
+    <section class="max-w-6xl mx-auto px-2.5 py-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
+            <div class="bg-white p-3 rounded-xl border border-gray-200/60 shadow-xs">
+                <div class="text-lg mb-1">✅</div>
+                <h3 class="font-bold text-[11px] sm:text-sm">Matos propre contrôlé</h3>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <div class="text-green-500 text-2xl mb-2">✅</div>
-                <h3 class="font-bold text-sm md:text-base">Packs Sans Caution</h3>
+            <div class="bg-white p-3 rounded-xl border border-gray-200/60 shadow-xs">
+                <div class="text-lg mb-1">✅</div>
+                <h3 class="font-bold text-[11px] sm:text-sm">Packs Sans Caution</h3>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <div class="text-green-500 text-2xl mb-2">✅</div>
-                <h3 class="font-bold text-sm md:text-base">Livraison Douala</h3>
+            <div class="bg-white p-3 rounded-xl border border-gray-200/60 shadow-xs">
+                <div class="text-lg mb-1">✅</div>
+                <h3 class="font-bold text-[11px] sm:text-sm">Livraison Douala</h3>
             </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <div class="text-green-500 text-2xl mb-2">✅</div>
-                <h3 class="font-bold text-sm md:text-base">Contrat clair, 0 surprise</h3>
+            <div class="bg-white p-3 rounded-xl border border-gray-200/60 shadow-xs">
+                <div class="text-lg mb-1">✅</div>
+                <h3 class="font-bold text-[11px] sm:text-sm">Contrat clair, 0 surprise</h3>
             </div>
         </div>
     </section>
 
     <!-- SECTION PACKS BEST-SELLERS -->
-    <section id="packs" class="bg-gray-100 py-12 px-4">
+    <section id="packs" class="bg-gray-100 py-8 px-3">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Nos Packs Événements Best-Sellers</h2>
-            <p class="text-gray-600 text-center mb-8 text-sm">Formules tout-en-un adaptées à votre budget</p>
+            <h2 class="text-xl md:text-2xl font-bold text-center mb-1">Nos Packs Événements Best-Sellers</h2>
+            <p class="text-gray-600 text-center mb-6 text-xs">Formules tout-en-un adaptées à votre budget</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <!-- Pack 1 -->
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
-                    <div class="p-6">
-                        <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded-full">✅ SANS CAUTION</span>
-                        <h3 class="text-xl font-bold mt-2">Pack Baptême 50 pers</h3>
-                        <p class="text-2xl font-black text-gray-900 my-4">45 000 FCFA <span class="text-sm font-normal text-gray-500">/jour</span></p>
-                        <ul class="space-y-2 text-sm text-gray-600 border-t border-gray-100 pt-4">
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 50 Chaises standards lavées</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 5 Tables rectangulaires solides</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Retrait gratuit au dépôt Déïdo</li>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 flex flex-col justify-between">
+                    <div class="p-5">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">✅ SANS CAUTION</span>
+                        <h3 class="text-lg font-bold mt-1.5">Pack Baptême 50 pers</h3>
+                        <p class="text-xl font-black text-gray-900 my-3">45 000 FCFA <span class="text-xs font-normal text-gray-500">/jour</span></p>
+                        <ul class="space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> 50 Chaises standards lavées</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> 5 Tables rectangulaires solides</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> Retrait gratuit au dépôt Déïdo</li>
                         </ul>
                     </div>
-                    <div class="p-6 bg-gray-50 border-t border-gray-100">
-                        <button onclick="ouvrirAlerte('Pack Baptême 50 pers - 45 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-xl font-bold hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
+                    <div class="p-4 bg-gray-50 border-t border-gray-100">
+                        <button onclick="ouvrirAlerte('Pack Baptême 50 pers - 45 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-lg font-bold text-sm hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
                     </div>
                 </div>
 
                 <!-- Pack 2 -->
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden border-2 border-amber-500 relative flex flex-col justify-between">
-                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">Populaire</div>
-                    <div class="p-6">
-                        <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded-full">✅ SANS CAUTION</span>
-                        <h3 class="text-xl font-bold mt-2">Pack Réunion 100 pers</h3>
-                        <p class="text-2xl font-black text-gray-900 my-4">85 000 FCFA <span class="text-sm font-normal text-gray-500">/jour</span></p>
-                        <ul class="space-y-2 text-sm text-gray-600 border-t border-gray-100 pt-4">
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 100 Chaises blanches</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 10 Tables rectangulaires</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Idéal deuil, réunion, anniversaire</li>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border-2 border-amber-500 relative flex flex-col justify-between">
+                    <div class="absolute top-2.5 right-2.5 bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Populaire</div>
+                    <div class="p-5">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">✅ SANS CAUTION</span>
+                        <h3 class="text-lg font-bold mt-1.5">Pack Réunion 100 pers</h3>
+                        <p class="text-xl font-black text-gray-900 my-3">85 000 FCFA <span class="text-xs font-normal text-gray-500">/jour</span></p>
+                        <ul class="space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> 100 Chaises blanches</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> 10 Tables rectangulaires</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> Idéal deuil, réunion, anniversaire</li>
                         </ul>
                     </div>
-                    <div class="p-6 bg-gray-50 border-t border-gray-100">
-                        <button onclick="ouvrirAlerte('Pack Réunion 100 pers - 85 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-xl font-bold hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
+                    <div class="p-4 bg-gray-50 border-t border-gray-100">
+                        <button onclick="ouvrirAlerte('Pack Réunion 100 pers - 85 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-lg font-bold text-sm hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
                     </div>
                 </div>
 
                 <!-- Pack 3 -->
-                <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
-                    <div class="p-6">
-                        <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded-full">✅ SANS CAUTION</span>
-                        <h3 class="text-xl font-bold mt-2">Pack Mariage 150 pers</h3>
-                        <p class="text-2xl font-black text-gray-900 my-4">140 000 FCFA <span class="text-sm font-normal text-gray-500">/jour</span></p>
-                        <ul class="space-y-2 text-sm text-gray-600 border-t border-gray-100 pt-4">
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> 150 Chaises + 15 Tables</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Possibilité d'ajouter des options</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Livraison Déïdo,Akwa,Bonadjo,Bonapriso,PK8,Bssadi,Makepe, Akwa-nord sur dévis</li>
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                    <div class="p-5">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">✅ SANS CAUTION</span>
+                        <h3 class="text-lg font-bold mt-1.5">Pack Mariage 150 pers</h3>
+                        <p class="text-xl font-black text-gray-900 my-3">140 000 FCFA <span class="text-xs font-normal text-gray-500">/jour</span></p>
+                        <ul class="space-y-1.5 text-xs text-gray-600 border-t border-gray-100 pt-3">
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> 150 Chaises + 15 Tables</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> Possibilité d'ajouter des options</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1.5"></i> Livraison Déïdo, Akwa, Bonadjo, Bonapriso, PK8, Bessengue, Makepe, Akwa-Nord sur devis</li>
                         </ul>
                     </div>
-                    <div class="p-6 bg-gray-50 border-t border-gray-100">
-                        <button onclick="ouvrirAlerte('Pack Mariage 150 pers - 140 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-xl font-bold hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
+                    <div class="p-4 bg-gray-50 border-t border-gray-100">
+                        <button onclick="ouvrirAlerte('Pack Mariage 150 pers - 140 000 FCFA')" class="w-full bg-amber-600 text-white py-2 rounded-lg font-bold text-sm hover:bg-amber-700 transition cursor-pointer">Réserver ce pack</button>
                     </div>
                 </div>
             </div>
@@ -146,12 +148,17 @@
     </section>
 
     <!-- ZONE LIVRAISON & FOOTER -->
-    <footer class="bg-gray-900 text-white py-8 px-4 text-center text-sm">
-        <p class="mb-2 font-semibold">📍 Zone de livraison : Déïdo,Akwa,Bonadjo,Bonapriso,PK8,Bssadi,Makepe, Akwa-nord sur devis.</p>
-        <p class="text-gray-400">Retrait gratuit au dépôt Déïdo. Tout droit réservé &copy; 2026.</p>
+    <footer class="bg-gray-900 text-white py-6 px-4 text-center text-xs">
+        <p class="mb-2 font-semibold text-gray-200">📍 Zone de livraison : Déïdo, Akwa, Bonadjo, Bonapriso, PK8, Bessengue, Makepe, Akwa-Nord sur devis.</p>
+        <p class="text-gray-500">Retrait gratuit au dépôt Déïdo. Tout droit réservé &copy; 2026.</p>
     </footer>
 
-    <!-- LOGIQUE LOGICIELLE SIMPLE -->
+    <!-- CSS Additionnel injecté pour cacher la barre de défilement du menu sur Android/iOS -->
+    <style>
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
     <script>
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
